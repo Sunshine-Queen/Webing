@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            margin: 100px;
+        }
+        
+        ul li {
+            float: left;
+            margin: 0 8px;
+            width: 158px;
+            height: 54px;
+            list-style: none;
+            /* 一会我们需要给box旋转 也需要透视 干脆给li 加里面的子盒子都有透视效果*/
+            perspective: 500px;
+        }
+        
+        .box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all .4s;
+        }
+        
+        .box:hover {
+            transform: rotateX(90deg);
+        }
+        
+        .front,
+        .bottom {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .front {
+            background-color: rgb(238, 180, 191);
+            z-index: 1;
+            transform: translateZ(27px);
+        }
+        
+        .bottom {
+            background-color: rgb(105, 78, 105);
+            /* 这个X轴一定是负值 */
+            /* 我们如果有移动 或者其他样式，必须先写我们的移动 */
+            transform: translateY(27px) rotateX(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <div class="box">
+                <div class="front">省下来的时间可以去做更多</div>
+                <div class="bottom">有意义的、自己想做的、值钱的事情</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">省下来的时间可以去做更多</div>
+                <div class="bottom">有意义的、自己想做的、值钱的事情</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">省下来的时间可以去做更多</div>
+                <div class="bottom">有意义的、自己想做的、值钱的事情</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">省下来的时间可以去做更多</div>
+                <div class="bottom">有意义的、自己想做的、值钱的事情</div>
+            </div>
+        </li>
+    </ul>
+
+</body>
+
+</html>
