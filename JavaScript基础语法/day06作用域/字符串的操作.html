@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var str = 'abaasdffggghhjjkkgfddsssss3444343'; //1
+        console.log(str.length);
+
+        console.log(str[0]); //a
+        console.log(str[3]); //a
+        console.log(str[5]); //d
+        console.log(str[9]); //g
+
+        console.log(str.indexOf('i')); //-1 记得字符串加引号
+        console.log(str.indexOf('c')); //-1
+        console.log(str.indexOf('b')); //1
+
+        console.log(str.replace('g', 22)); //替换操作
+        console.log(str.replace('ss', 'b')); //替换操作
+
+        console.log(str.slice(1, 5)); //baas
+
+        // 6.找出以上字符串中出现次数最多的字符和出现的次数 
+        var o = {}; //创建一个新对象用来统计出现次数
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i); //chars 是 字符串的每一个字符
+            if (o[chars]) { //如果返回-1，说明存在就+1
+                o[chars]++;
+            } else {
+                o[chars] = 1;
+            }
+        }
+        console.log(o); //统计出现次数
+
+
+        var max = 0;
+        var str1 = '';
+        for (var k in o) {
+            // k 得到是 属性名
+            // o[k] 得到的是属性值
+            if (o[k] > max) { //如果它的属性值 > 上一个的属性值
+                max = o[k]; //存放在max里,继续去比较下一个
+                str1 = k;
+            }
+        }
+        console.log(max);
+        console.log('出现最多的字母是:' + str1);
+
+        // 7、 遍历字符串，并将遍历出的字符两头添加符号“@”
+        for (var i = 0; i < str.length; i++) {
+            // ch = "@" + str[i] + "@";
+            console.log('@' + str[i] + '@');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

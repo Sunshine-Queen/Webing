@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1.判断是闰年还是平年
+        function isRun(year) {
+            var flag = false;
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                return flag = true;
+            }
+        }
+
+        function get_day(year, month, day) {
+            var days = day;
+            for (var i = 1; i < month; i++) {
+                switch (i) {
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12:
+                        days += 31;
+                        break;
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        days += 30;
+                        break;
+                    case 2:
+                        if (isRun(year)) {
+                            days += 29;
+                        } else {
+                            days += 28;
+                        }
+                        break;
+                }
+            }
+            return days;
+        }
+        var year = Number(prompt("请输入多少年："));
+        var month = Number(prompt("请输入月份："));
+        var day = Number(prompt("请输入几号："));
+        var result = get_day(year, month, day);
+        document.write(result);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
