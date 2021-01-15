@@ -44,6 +44,7 @@ window.addEventListener('load', function() {
         // 大图片的移动距离 X Y
         var bigX = maskX * bigMax / maskMax;
         var bigY = maskY * bigMax / maskMax;
+        // 反方向走
         bigIMg.style.left = -bigX + 'px';
         bigIMg.style.top = -bigY + 'px';
 

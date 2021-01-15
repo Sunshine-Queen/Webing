@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="js/vue.js"></script>
+</head>
+
+<body>
+    <!-- 生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。 -->
+    <!-- created 钩子可以用来在一个实例被创建之后执行代码 -->
+
+    <script>
+        /* 生命周期钩子的 this 上下文指向调用它的 Vue 实例 */
+        new Vue({
+                data: {
+                    a: 1
+                },
+                created: function() {
+                    // `this` 指向 vm 实例
+                    console.log('a is: ' + this.a)
+                }
+            })
+            // => "a is: 1"
+    </script>
+</body>
+
+</html>
