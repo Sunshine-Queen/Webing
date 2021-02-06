@@ -711,7 +711,7 @@ module.exports = function escape(url) {
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "a3ef6e9c572531eadb0244076f493ab4.jpg";
+module.exports = __webpack_require__.p + "img/2.a3ef6e9c.jpg";
 
 /***/ }),
 /* 9 */
