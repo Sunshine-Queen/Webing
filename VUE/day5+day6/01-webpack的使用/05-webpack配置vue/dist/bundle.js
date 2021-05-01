@@ -1,3 +1,4 @@
+/*! 最终版权归Q所有 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
